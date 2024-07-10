@@ -1,0 +1,92 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+}
+
+.heading {
+  width: 50%;
+  margin: auto;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.navbarContainer {
+  width: 50%;
+  margin: auto;
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.navbarList {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid grey;
+}
+
+.navbarItem {
+  cursor: pointer;
+}
+
+.inputSession {
+  width: 50%;
+  margin: auto;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputBar input {
+  width: 650px;
+  height: 40px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+.inputSession .addBtn {
+  width: 100px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: blue;
+  color: #fff;
+}
+
+.todoList {
+  width: 50%;
+  margin: auto;
+
+}
+
+.todoItem {
+  width: 100%;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todoItem .todoName {
+  display: flex;
+  align-items: center;
+}
+
+.todoItem .todoName label{
+  padding-left: 2px;
+}
+
+.todoBtn {
+  padding-top: 10px;
+}
+
+.completed {
+  text-decoration: line-through;
+}
