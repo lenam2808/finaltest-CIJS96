@@ -20,16 +20,16 @@ function App() {
     let updatedTodo = [...todos];
     updatedTodo.push(newTodo);
     setTodos(updatedTodo);
-    setTodoName('')
-    localStorage.setItem("todolist", JSON.stringify(updatedTodo))
+    setTodoName("");
+    localStorage.setItem("todolist", JSON.stringify(updatedTodo));
   };
 
   useEffect(() => {
-    let savedTodo = JSON.parse(localStorage.getItem("todolist"))
-    if(savedTodo) {
+    let savedTodo = JSON.parse(localStorage.getItem("todolist"));
+    if (savedTodo) {
       setTodos(savedTodo);
     }
-  },[])
+  }, []);
 
   const handleChangeStatus = (item, idx) => {
     const newTodoList = [...todos];
@@ -42,9 +42,13 @@ function App() {
   };
 
   const handleDeleteTodo = (id) => {
-    let deletedTodoList = [...todos].filter(todo => todo.id !== id);
+    let deletedTodoList = [...todos].filter((todo) => todo.id !== id);
     setTodos(deletedTodoList);
     localStorage.setItem("todolist", JSON.stringify(deletedTodoList));
+  };
+
+  const handleDelAll = () => {
+    setTodos([]);
   }
 
   const handleShowAll = () => {
@@ -111,17 +115,25 @@ function App() {
                   }`}
                   onClick={() => handleChangeStatus(item, idx)}
                 >
-                  <input id={item.id} type="checkbox" checked={item.status === "completed" ? "true" : ""} onClick={() => {
-
-                  }}/>
+                  <input
+                    id={item.id}
+                    type="checkbox"
+                    checked={item.status === "completed" ? "true" : ""}
+                    onClick={() => {}}
+                  />
                   <label htmlFor={item.id}>{item.name}</label>
                 </div>
                 <div className="todoBtn">
-                  <button onClick={() => handleDeleteTodo(item.id)}><i className="fa-solid fa-trash"></i></button>
+                  <button onClick={() => handleDeleteTodo(item.id)}>
+                    <i className="fa-solid fa-trash"></i>
+                  </button>
                 </div>
               </div>
             );
           })}
+        </div>
+        <div className="delAll">
+          <button className="btnDelAll" onClick={handleDelAll}>Delete All</button>
         </div>
       </div>
     </>
